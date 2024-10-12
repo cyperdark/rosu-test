@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "type": "module",
+  "scripts": {},
+  "dependencies": {
+    "alpha_rosu": "npm:@kotrikd/rosu-pp@^2.0.0-alpha.0",
+    "current_rosu": "npm:rosu-pp-js@^1.1.0",
+    "old_rosu": "npm:@kotrikd/rosu-pp@^0.10.0",
+    "tosu_rosu": "npm:rosu-pp-js@^1.0.2"
+  }
+}
