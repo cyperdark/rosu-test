@@ -3,9 +3,10 @@
   "type": "module",
   "scripts": {},
   "dependencies": {
-    "alpha_rosu": "npm:@kotrikd/rosu-pp@^2.0.0-alpha.0",
-    "current_rosu": "npm:rosu-pp-js@^1.1.0",
-    "old_rosu": "npm:@kotrikd/rosu-pp@^0.10.0",
-    "tosu_rosu": "npm:rosu-pp-js@^1.0.2"
+    "alpha_rosu": "npm:@kotrikd/rosu-pp@2.0.0-alpha.0",
+    "pre_fix_rosu": "npm:rosu-pp-js@1.1.0",
+    "current_rosu": "npm:rosu-pp-js@1.1.1",
+    "old_rosu": "npm:@kotrikd/rosu-pp@0.10.0",
+    "tosu_rosu": "npm:rosu-pp-js@1.0.2"
   }
 }
