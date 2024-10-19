@@ -1,5 +1,6 @@
 import fs from 'fs';
 import alpha_rosu from "alpha_rosu";
+import local_rosu from "./local_rosu/rosu_pp_js.js";
 
 
 /**
@@ -132,5 +133,5 @@ export const calculatePassedObjects = (
 
 
 
-calculate_results(alpha_rosu);
-calculate_gradual(alpha_rosu);
+calculate_results(local_rosu);
+calculate_gradual(local_rosu);
