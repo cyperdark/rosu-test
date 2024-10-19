@@ -2,7 +2,7 @@ import fs from 'fs';
 
 import rosu_102 from 'tosu_rosu';
 import rosu_110 from 'current_rosu';
-// import rosu_200 from 'alpha_rosu';
+import rosu_200 from 'alpha_rosu';
 
 
 
@@ -45,16 +45,16 @@ function test(rosu_as_param, version, mods, file_path) {
 
 
 test(rosu_102, 102, 64, '1.osu');
-test(rosu_110, 110, 64, '1.osu');
+test(rosu_200, 110, 64, '1.osu');
 
 setTimeout(() => {
-  test(rosu_110, 200, 0, '2.osu');
+  test(rosu_200, 200, 0, '2.osu');
 }, 100);
 
 setTimeout(() => {
-  test(rosu_110, 200, 8, '1.osu');
+  test(rosu_200, 200, 8, '1.osu');
 }, 200);
 
 setTimeout(() => {
-  test(rosu_110, 200, 8, '2.osu');
+  test(rosu_200, 200, 8, '2.osu');
 }, 300);
