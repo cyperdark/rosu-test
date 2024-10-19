@@ -3,7 +3,7 @@
   "type": "module",
   "scripts": {},
   "dependencies": {
-    "alpha_rosu": "npm:@kotrikd/rosu-pp@2.0.0-alpha.4",
+    "alpha_rosu": "npm:@kotrikd/rosu-pp@2.0.0-alpha.5",
     "pre_fix_rosu": "npm:rosu-pp-js@1.1.0",
     "current_rosu": "npm:rosu-pp-js@1.1.1",
     "old_rosu": "npm:@kotrikd/rosu-pp@0.10.0",

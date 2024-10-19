@@ -1,6 +1,6 @@
 import fs from 'fs';
 import alpha_rosu from "alpha_rosu";
-import local_rosu from "./local_rosu/rosu_pp_js.js";
+// import local_rosu from "./local_rosu/rosu_pp_js.js";
 
 
 /**
@@ -9,19 +9,23 @@ import local_rosu from "./local_rosu/rosu_pp_js.js";
  */
 function calculate_results(rosu) {
   try {
-    const bytes = fs.readFileSync('./3.osu', 'utf8');
+    const bytes = fs.readFileSync('./5.osu', 'utf8');
     const beatmap = new rosu.Beatmap(bytes);
 
-
+    /**
+     * @type {import('alpha_rosu').PerformanceArgs}
+     */
     const scoreParams = {
-      combo: 2875,
-      mods: 16,
-      misses: 4,
-      n50: 3,
-      n100: 58,
-      n300: 3334,
-      nKatu: 31,
+      combo: 331,
+      mods: 88,
+      misses: 9,
+      n50: 0,
+      n100: 23,
+      n300: 457,
+      nKatu: 0,
       nGeki: 450,
+      sliderEndHits: 244,
+      sliderTickHits: 15,
       lazer: true
     };
 
@@ -29,9 +33,9 @@ function calculate_results(rosu) {
     const curPerformance = new rosu.Performance(scoreParams).calculate(beatmap);
     const fcPerformance = new rosu.Performance({
       lazer: true,
-      mods: 16,
+      mods: 88,
       misses: 0,
-      accuracy: 98.67
+      accuracy: 95.95
     }).calculate(curPerformance);
 
 
@@ -48,25 +52,29 @@ function calculate_results(rosu) {
  */
 function calculate_gradual(rosu) {
   try {
-    const bytes = fs.readFileSync('./3.osu', 'utf8');
+    const bytes = fs.readFileSync('./5.osu', 'utf8');
     const beatmap = new rosu.Beatmap(bytes);
 
 
     const difficulty = new rosu.Difficulty({
       lazer: true,
-      mods: 16,
+      mods: 88,
     });
     const GradualPerformance = new rosu.GradualPerformance(difficulty, beatmap);
 
+    /**
+     * @type {import('alpha_rosu').ScoreState}
+     */
     const scoreParams = {
-      maxCombo: 2875,
-      mods: 16,
-      misses: 4,
-      n50: 3,
-      n100: 58,
-      n300: 3334,
-      nKatu: 31,
+      maxCombo: 331,
+      misses: 9,
+      n50: 0,
+      n100: 23,
+      n300: 457,
+      nKatu: 0,
       nGeki: 450,
+      sliderEndHits: 244,
+      sliderTickHits: 15,
     };
 
     const passedObjects = calculatePassedObjects(0,
@@ -82,9 +90,9 @@ function calculate_gradual(rosu) {
     const currPerformance = GradualPerformance.nth(scoreParams, passedObjects - 1);
     const fcPerformance = new rosu.Performance({
       lazer: true,
-      mods: 16,
+      mods: 88,
       misses: 0,
-      accuracy: 98.67
+      accuracy: 95.95
     }).calculate(beatmap);
 
 
@@ -133,5 +141,5 @@ export const calculatePassedObjects = (
 
 
 
-calculate_results(local_rosu);
-calculate_gradual(local_rosu);
+calculate_results(alpha_rosu);
+calculate_gradual(alpha_rosu);
